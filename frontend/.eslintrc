@@ -1,9 +1,11 @@
 {
-  "parser": "babel-eslint",
+  "parser": "@typescript-eslint/parser",
   "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "react-app",
     "prettier",
-    "prettier/react",
-    "react-app"
+    "prettier/@typescript-eslint",
+    "prettier/react"
   ],
   "plugins": [
     "import",
@@ -12,7 +14,8 @@
     "mysticatea",
     "prefer-object-spread",
     "prettier",
-    "react"
+    "react",
+    "@typescript-eslint"
   ],
   "env": {
     "browser": true,
@@ -31,15 +34,7 @@
     "HTMLElement": true
   },
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "singleQuote": true,
-        "trailingComma": "all",
-        "bracketSpacing": true,
-        "jsxBracketSameLine": false
-      }
-    ],
+    "prettier/prettier": "error",
     "import/extensions": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-unresolved": 0,
@@ -47,10 +42,14 @@
     "mysticatea/no-useless-rest-spread": "error",
     "prefer-object-spread/prefer-object-spread": 2,
     "react/destructuring-assignment": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
     "react/no-array-index-key": 2,
     "react/prefer-stateless-function": 0,
     "react/prop-types": 0,
-    "react/require-default-props": 0
+    "react/require-default-props": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/explicit-member-accessibility": 0,
+    "@typescript-eslint/camelcase": 0,
+    "@typescript-eslint/interface-name-prefix": 0
   }
 }
