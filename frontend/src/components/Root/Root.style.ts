@@ -17,7 +17,4 @@ export default {
     margin: auto;
     display: flex;
   `,
-  Logo: styled.img`
-    height: 40px;
-  `,
 };
