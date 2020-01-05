@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
   "parser": "@typescript-eslint/parser",
   "extends": [
     "plugin:@typescript-eslint/recommended",
@@ -8,10 +7,6 @@
     "prettier/@typescript-eslint",
     "prettier/react"
   ],
-=======
-  "parser": "babel-eslint",
-  "extends": ["prettier", "prettier/react", "react-app"],
->>>>>>> 24e77f7... WIP
   "plugins": [
     "import",
     "jest",
@@ -47,11 +42,7 @@
     "mysticatea/no-useless-rest-spread": "error",
     "prefer-object-spread/prefer-object-spread": 2,
     "react/destructuring-assignment": 0,
-<<<<<<< HEAD
     "react/jsx-filename-extension": [1, { "extensions": [".ts", ".tsx"] }],
-=======
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx", "tsx"] }],
->>>>>>> 24e77f7... WIP
     "react/no-array-index-key": 2,
     "react/prefer-stateless-function": 0,
     "react/prop-types": 0,
