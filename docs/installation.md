@@ -15,10 +15,17 @@ docker-compose build
 
 What you need to do to (re)start the project:
 
+- :warning: If running on a windows machine
+  - Make sure you cloned the project using [gitbash](https://gitforwindows.org/) (It handles encoding issues between unix and windows automatically)
+  - Replace the `scripts/start` node of `frontend/package.json` with this command:
+    ```
+    set \"REACT_APP_ENV=local\" && set \"NODE_ENV=src/\" && react-app-rewired start
+    ```
+
 - start the frontend:
   ```bash
   cd frontend
-  yarn install
+  yarn
   yarn start
   ```
 
