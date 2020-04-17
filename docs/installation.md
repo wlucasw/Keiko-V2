@@ -19,7 +19,7 @@ What you need to do to (re)start the project:
   - Make sure you cloned the project using [gitbash](https://gitforwindows.org/) (It handles encoding issues between unix and windows automatically)
   - Replace the `scripts/start` node of `frontend/package.json` with this command:
     ```
-    set \"REACT_APP_ENV=local\" && set \"NODE_ENV=src/\" && react-app-rewired start
+    set \"REACT_APP_ENV=local\" && set \"NODE_PATH=src/\" && react-app-rewired start
     ```
 
 - start the frontend:
