@@ -1,4 +1,4 @@
-# Installation
+## Installation
 
 In development:
 - webpack-dev-server listens on the port 3000
@@ -41,3 +41,13 @@ What you need to do to (re)start the project:
   ```
 
 The project should now be running at [https://localhost](https://localhost).
+
+## Hot reload
+
+The hot reload should work out of the box.
+If it doesn't work on Ubuntu, it may be because the max_user_watches is too low.
+You can increase it to its max value using this command:
+
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
