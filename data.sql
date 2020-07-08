@@ -152,3 +152,4 @@ VALUES
     (149, 'dragonite', 22, 2100),
     (150, 'mewtwo', 20, 1220),
     (151, 'mew', 4, 40);
+SELECT setval('pokemon_id_seq', (SELECT MAX(id) FROM pokemon));
