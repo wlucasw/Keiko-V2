@@ -9,7 +9,8 @@ Xdebug is already installed and configured on the php Docker container.
 ## Configure the container
 
 - Check in your docker-compose.yml that you have specified the same IDE key as above
-``` yaml
+
+```yaml
 services:
   php:
     environment:
@@ -18,17 +19,22 @@ services:
 ```
 
 - If you use a macOS, replace in your docker/php/xdebug.ini
-``` yaml
-xdebug.remote_handler=dbgp
-xdebug.remote_autostart=1
-xdebug.remote_connect_back=1
+
+```yaml
+xdebug.mode=debug
+xdebug.start_with_request=yes
+xdebug.discover_client_host=yes
+xdebug.client_port=9000
 ```
+
 by
-``` yaml
-xdebug.remote_enable=1
-xdebug.remote_port=9000
-xdebug.remote_host=host.docker.internal
-xdebug.idekey=PHPSTORM
+
+```yaml
+xdebug.mode=debug
+xdebug.start_with_request=yes
+xdebug.discover_client_host=yes
+xdebug.client_port=9000
+xdebug.client_host=host.docker.internal
 ```
 
 ## Configure your IDE
@@ -36,8 +42,8 @@ xdebug.idekey=PHPSTORM
 ### PHPStorm
 
 - Add a server to do the mapping between the container and your project files. The name should be the same as the IDE key specified in your browser.
-Don't change the port as it is related with XDebug, not your application
-![alt text](./phpstorm-server-config.png "PHPStorm server config")
+  Don't change the port as it is related with XDebug, not your application
+  ![alt text](./phpstorm-server-config.png "PHPStorm server config")
 - Start listening to Xdebug connections
 - Add a breakpoint on your index.php
-- Enjoy :)
+- Enjoy 😉
