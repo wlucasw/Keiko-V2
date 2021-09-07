@@ -1,12 +1,13 @@
 ## Installation
 
 In development:
+
 - webpack-dev-server listens on the port 3000
   - it serves your frontend app's bundle.js
   - it manages hot reloading
 
-
 To build the application, launch:
+
 ```bash
 docker-compose build
 ```
@@ -16,6 +17,7 @@ docker-compose build
 What you need to do to (re)start the project:
 
 - :warning: If running on a windows machine
+
   - Make sure you cloned the project using [gitbash](https://gitforwindows.org/) (It handles encoding issues between unix and windows automatically)
   - Replace the `scripts/start` node of `frontend/package.json` with this command:
     ```
@@ -23,6 +25,7 @@ What you need to do to (re)start the project:
     ```
 
 - start the frontend:
+
   ```bash
   cd frontend
   yarn
@@ -40,7 +43,7 @@ What you need to do to (re)start the project:
   make populate-db
   ```
 
-The project should now be running at [https://localhost](https://localhost).
+The project should now be running at [http://localhost:8000](http://localhost:8000). If the installation went well, you should see a swagger. Calling the endpoint GET /pokemon?page=1 should return a list of pokemons if your database was well populated
 
 ## Hot reload
 
