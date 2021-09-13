@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es6",
     "allowJs": true,
+    "baseUrl": "src",
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
