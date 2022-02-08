@@ -1,1 +1,1 @@
-export { default } from './Root.wrap';
+export { Root } from "./Root"

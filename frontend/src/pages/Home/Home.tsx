@@ -1,20 +1,17 @@
-import * as React from 'react';
+import styles from "./Home.module.css"
 
-import Style from './Home.style';
-
-const Home = () => {
-  const pokemon = 'Carapuce';
+export const Home = () => {
+  const pokemon = "Carapuce"
 
   return (
-    <Style.Intro>
+    <div className={styles.intro}>
       <div>Bienvenue sur ton futur pokédex !</div>
+      <div>Tu vas pouvoir apprendre tout ce qu'il faut sur React et attraper des pokemons !</div>
       <div>
-        Tu vas pouvoir apprendre tout ce qu'il faut sur React, Redux et Symfony, et attraper des
-        pokemons !
+        <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png' />
+        <p>Name: {pokemon}</p>
+        <p>Number: 7</p>
       </div>
-      <div>Commence par créer ton premier pokemon: {pokemon}</div>
-    </Style.Intro>
-  );
-};
-
-export default Home;
+    </div>
+  )
+}

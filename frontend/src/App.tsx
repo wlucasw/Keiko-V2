@@ -1,36 +1,16 @@
-import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Root } from "./components/Root"
 
-import { ConnectedRouter } from 'connected-react-router';
-import { History } from 'history';
-import { Provider } from 'react-redux';
-import { Route } from 'react-router';
-import { Store } from 'redux';
-import { Persistor } from 'redux-persist';
-import { PersistGate } from 'redux-persist/integration/react';
+import { Home } from "./pages/Home"
 
-import Root from './components/Root';
-import Routes from './routes';
-
-interface Props {
-  history: History;
-  persistor: Persistor;
-  store: Store;
+export const App = () => {
+  return (
+    <Root>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </Root>
+  )
 }
-
-const RootComponentWithRoutes: React.FunctionComponent = () => (
-  <Root>
-    <Routes />
-  </Root>
-);
-
-const App: React.FunctionComponent<Props> = ({ history, persistor, store }) => (
-  <Provider store={store}>
-    <PersistGate loading={null} persistor={persistor}>
-      <ConnectedRouter history={history}>
-        <Route path="/" component={RootComponentWithRoutes} />
-      </ConnectedRouter>
-    </PersistGate>
-  </Provider>
-);
-
-export default App;
