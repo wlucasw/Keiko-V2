@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -8,5 +8,15 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('/pokemons')
+  getPokemons() {
+    return this.appService.getPokemonLists();
+  }
+
+  @Get('/pokemon/:id')
+  findOne(@Param() params: { id: number }) {
+    return this.appService.getPokemonFromId(params.id);
   }
 }
