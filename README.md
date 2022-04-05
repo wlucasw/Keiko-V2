@@ -1,32 +1,43 @@
-# keiko
+# Keiko Pokemon
 
-🚧 A project that does something.
+## Prerequisites
 
-## Getting started
+- `NodeJS` v14+ installed
+- `yarn` installed globally (`npm install -g yarn`)
 
-- Follow the [installation](./docs/installation.md) docs
-- Head to [localhost:3000](http://localhost:3000)
+## Installation
 
-## Documentation index
+Install the backend dependencies:
 
-- [Installation](./docs/installation.md)
-- [Frontend docs](./frontend/README.md)
-- [Deployment](./docs/deployment.md)
+```bash
+cd backend && yarn
+```
 
-## Team
+Install the frontend dependencies
 
-> 🚧 Update me!
+```bash
+cd frontend && yarn
+```
 
-Project director:
-  - **P D** (pd@theodo.co.uk)
+You are good to go !
 
-Developers (see [contributors](../../graphs/contributors)):
-  - **Dev 1** (dev@theodo.co.uk)
-  - **Dev 2** (dev@theodo.co.uk)
-  - **Dev 3** (dev@theodo.co.uk)
+## Running the project
 
-Scrum Master:
-  - **S M** (sm@theodo.co.uk)
+- Open two different terminals (one for the backend and the other the frontend)
+- In the first terminal, start the backend by running:
+```bash
+cd backend && yarn start
+```
 
-Product Owner:
-  - **P O** (po@client.com)
+Check that the backend is running by visiting: [http://localhost:8000](http://localhost:8000). A website should appear with some API docs.
+
+- In the second terminal, start the frontend by running:
+```bash
+cd frontend && yarn start
+```
+
+Check that the frontend is running by visiting: [http://localhost:3000](http://localhost:3000).
+
+## Development
+
+This project supports hot reloading. Each time a file is modified in the frontend, the server will automatically reload the required code.
