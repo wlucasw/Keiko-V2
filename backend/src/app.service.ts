@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 
 const pokemons = [
   { id: 1, name: 'bulbasaur', height: 7, weight: 69 },
@@ -160,8 +160,19 @@ export class AppService {
     return 'Hello World!';
   }
 
-  getPokemonLists() {
-    return pokemons;
+  getPokemonLists(page?: number) {
+    if (page === undefined) {
+      return pokemons;
+    }
+
+    if (page * 15 > pokemons.length) {
+      throw new HttpException(
+        'The requested page does not exist',
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+
+    return pokemons.slice(page * 15, Math.min(pokemons.length, page * 15 + 15));
   }
 
   getPokemonFromId(idParam: number) {

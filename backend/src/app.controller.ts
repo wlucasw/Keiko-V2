@@ -1,4 +1,5 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
+import { ApiQuery } from '@nestjs/swagger';
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,8 +12,14 @@ export class AppController {
   }
 
   @Get('/pokemons')
-  getPokemons() {
-    return this.appService.getPokemonLists();
+  @ApiQuery({
+    name: 'page',
+    type: String,
+    description: 'Page number',
+    required: false,
+  })
+  getPokemons(@Query('page') page?: number) {
+    return this.appService.getPokemonLists(page);
   }
 
   @Get('/pokemon/:id')
